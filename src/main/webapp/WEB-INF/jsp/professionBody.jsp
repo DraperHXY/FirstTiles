@@ -83,7 +83,7 @@
 
                     <div class="warp-class2">
                         <b class="text-b">有286人正在学</b>
-                        <b class="text-right"><d:longToDate pattern="yyyy-mm-dd hh-mm-ss更新">${item.updateAt}</d:longToDate></b>
+                        <b class="text-right"><d:longToDate pattern="yyyy-MM-dd hh:mm:ss更新">${item.updateAt}</d:longToDate></b>
                     </div>
                     <div class="warp-class2">
                         <p class="text-p">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</p>
@@ -169,7 +169,7 @@
 
                     <div class="warp-class2">
                         <b class="text-b">有286人正在学</b>
-                        <b class="text-right"><d:longToDate pattern="yyyy-mm-dd hh-mm-ss更新">${item.updateAt}</d:longToDate></b>
+                        <b class="text-right"><d:longToDate pattern="yyyy-MM-dd hh:mm:ss更新">${item.updateAt}</d:longToDate></b>
                     </div>
                     <div class="warp-class2">
                         <p class="text-p">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</p>
@@ -251,7 +251,7 @@
 
                     <div class="warp-class2">
                         <b class="text-b">有286人正在学</b>
-                        <b class="text-right"><d:longToDate pattern="yyyy-mm-dd hh-mm-ss更新">${item.updateAt}</d:longToDate></b>
+                        <b class="text-right"><d:longToDate pattern="yyyy-MM-dd hh:mm:ss更新">${item.updateAt}</d:longToDate></b>
                     </div>
                     <div class="warp-class2">
                         <p class="text-p">提示:在你学习之前你应该已经掌握XXXXX、XXXXX、XX等语言基础</p>

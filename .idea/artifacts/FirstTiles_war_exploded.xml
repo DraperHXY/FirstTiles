@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="FirstTiles:war exploded">
-    <output-path>$PROJECT_DIR$/target/ArtistStudio</output-path>
+    <output-path>$PROJECT_DIR$/target/FirstTiles</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -25,11 +25,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.5" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
-          <element id="library" level="project" name="Maven: org.glassfish.web:javax.servlet.jsp.jstl:1.2.4" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
-          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
-          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.1.0.RELEASE" />
@@ -84,7 +79,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/ArtistStudio/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/FirstTiles/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="FirstTiles/web/Web" />
     </root>
