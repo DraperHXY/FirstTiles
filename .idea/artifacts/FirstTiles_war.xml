@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FirstTiles:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ArtistStudio.war">
+      <element id="artifact" artifact-name="FirstTiles:war exploded" />
+    </root>
+  </artifact>
+</component>
