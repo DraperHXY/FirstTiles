@@ -101,5 +101,7 @@
     <orderEntry type="library" name="Maven: ognl:ognl:2.7.3" level="project" />
     <orderEntry type="library" name="Maven: jboss:javassist:3.7.ga" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tiles:tiles-compat:3.0.8" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.4" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.60" level="project" />
   </component>
 </module>

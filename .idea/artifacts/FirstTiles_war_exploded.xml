@@ -76,6 +76,7 @@
           <element id="library" level="project" name="Maven: ognl:ognl:2.7.3" />
           <element id="library" level="project" name="Maven: jboss:javassist:3.7.ga" />
           <element id="library" level="project" name="Maven: org.apache.tiles:tiles-compat:3.0.8" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.60" />
         </element>
       </element>
       <element id="directory" name="META-INF">

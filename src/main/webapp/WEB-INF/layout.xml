@@ -21,4 +21,8 @@
         <put-attribute name="body" value="/WEB-INF/jsp/professionBody.jsp"/>
     </definition>
 
+    <definition name="loginView" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/loginBody.jsp"/>
+    </definition>
+
 </tiles-definitions>

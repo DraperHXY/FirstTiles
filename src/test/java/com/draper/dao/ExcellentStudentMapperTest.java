@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Collections;
 import java.util.List;
 
-public class ExcellentStudentTest extends BaseTest {
+public class ExcellentStudentMapperTest extends BaseTest {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 

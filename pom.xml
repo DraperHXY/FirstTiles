@@ -165,15 +165,15 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>org.glassfish.web</groupId>-->
-            <!--<artifactId>javax.servlet.jsp.jstl</artifactId>-->
-            <!--<version>1.2.4</version>-->
+        <!--<groupId>org.glassfish.web</groupId>-->
+        <!--<artifactId>javax.servlet.jsp.jstl</artifactId>-->
+        <!--<version>1.2.4</version>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>javax.servlet.jsp.jstl</groupId>-->
-            <!--<artifactId>javax.servlet.jsp.jstl-api</artifactId>-->
-            <!--<version>1.2.1</version>-->
+        <!--<groupId>javax.servlet.jsp.jstl</groupId>-->
+        <!--<artifactId>javax.servlet.jsp.jstl-api</artifactId>-->
+        <!--<version>1.2.1</version>-->
         <!--</dependency>-->
 
         <!-- 5.Spring -->
@@ -321,6 +321,21 @@
                     <groupId>commons-collections</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- 5) lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 7. security -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.60</version>
         </dependency>
 
 

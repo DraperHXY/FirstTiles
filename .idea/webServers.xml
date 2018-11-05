@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="486ae39a-218e-49b2-b2c4-51f9d40e3ec7" name="Ecs" url="http://112.74.112.32/FirstTiles">
+        <fileTransfer host="112.74.112.32" port="22" rootFolder="/alidata/server/tomcat-8.5.14" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

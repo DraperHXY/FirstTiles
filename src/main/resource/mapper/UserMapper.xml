@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.draper.dao.UserMapper">
+
+    <insert id="insertUser">
+        INSERT INTO user
+        (create_at,update_at,account,password)
+        VALUES
+        (#{createAt}, #{updateAt}, #{account}, #{password})
+    </insert>
+
+    <select id="selectUserByAccount" resultType="com.draper.entity.User">
+        SELECT *
+        FROM user
+        WHERE account = #{account}
+    </select>
+
+    <select id="selectUserIdByAccount" resultType="java.lang.Long">
+        SELECT id
+        FROM user
+        WHERE account = #{account}
+    </select>
+
+</mapper>
