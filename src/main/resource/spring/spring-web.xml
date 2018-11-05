@@ -43,6 +43,14 @@
      -->
     <mvc:default-servlet-handler/>
 
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/u/**"/>
+            <bean class="com.draper.web.interceptor.UserInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <!--<property name="converters">-->
         <!--<list>-->
