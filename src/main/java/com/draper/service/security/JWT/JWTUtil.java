@@ -1,4 +1,4 @@
-package com.draper.web.security.JWT;
+package com.draper.service.security.JWT;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

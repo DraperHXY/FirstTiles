@@ -46,7 +46,7 @@
 
     <mvc:interceptors>
         <mvc:interceptor>
-            <mvc:mapping path="/u/**"/>
+            <mvc:mapping path="/v1/u/**"/>
             <bean class="com.draper.web.interceptor.UserInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

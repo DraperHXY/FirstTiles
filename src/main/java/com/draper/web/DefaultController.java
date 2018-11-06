@@ -10,7 +10,8 @@ public class DefaultController {
 
     @GetMapping("")
     private String indexPage() {
-        return "loginView";
+        return "indexView";
+//        return "loginView";
 //        return "redirect:/v1/index";
 //        return "test";
     }

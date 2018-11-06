@@ -74,4 +74,25 @@ fabric.properties
 hs_err_pid*
 
 src/main/resource/jdbc.properties
+*.puml
 
+target/ArtistStudio/
+target/FirstTiles/META-INF/
+target/FirstTiles/WEB-INF/classes/jdbc.properties
+target/FirstTiles/WEB-INF/classes/log4j2.xml
+target/FirstTiles/WEB-INF/classes/mapper/
+target/FirstTiles/WEB-INF/classes/message/
+target/FirstTiles/WEB-INF/classes/mybatis-config.xml
+target/FirstTiles/WEB-INF/classes/spring/
+target/FirstTiles/WEB-INF/jsp/
+target/FirstTiles/WEB-INF/layout.xml
+target/FirstTiles/WEB-INF/tld/
+target/FirstTiles/WEB-INF/web.xml
+target/FirstTiles/css/
+target/FirstTiles/fonts/
+target/FirstTiles/img/
+target/FirstTiles/js/
+target/FirstTiles/login_resources/
+target/classes/
+target/generated-sources/
+target/generated-test-sources/

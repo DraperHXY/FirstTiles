@@ -6,4 +6,8 @@ public interface UserService {
 
     long signUp(User user);
 
+    boolean hasUser(String account);
+
+    boolean check(User expectUser);
+
 }

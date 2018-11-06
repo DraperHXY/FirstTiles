@@ -16,23 +16,23 @@
                 </a>
                 <!--写日报-->
                 <span class="header-dot-333">|</span>
-                <a class="ng-scope" style="color: #000000">写</a><!-- end ngIf: selfData.cid > 0 -->
+                <a style="color: #000000">写</a><!-- end ngIf: selfData.cid > 0 -->
                 <span class="header-dot-333">|</span>
                 <!--日报-->
-                <a class="ng-scope" style="color: #000000" href="/school/10466/daily">日报</a>
+                <a style="color: #000000" href="/school/10466/daily">日报</a>
                 <span class="header-dot-333">|</span>
                 <!--班级-->
-                <a class="ng-binding ng-scope" style="color: #000000" href="/class/712//daily">3班</a>
+                <a style="color: #000000" href="/class/712//daily">3班</a>
                 <span class="header-dot-333">|</span>
                 <!--报名-->
-                <a class="ng-binding ng-scope" style="color: #000000" href="/occupation/5/daily">java</a>
+                <a style="color: #000000" href="/occupation/5/daily">java</a>
                 <span class="header-dot-333">|</span>
 
                 <!--登录用户名-->
-                <a class="header-user ng-binding" style="color: #000000" href="/school/10466/class">贺啸宇</a>
+                <a class="header-user" style="color: #000000" href="/FirstTiles/v1/user/loginIn">贺啸宇</a>
                 <span class="header-dot-333 ng-scope" ng-if="selfData.nick">|</span>
                 <!--退出-->
-                <a class="message-color" style="color: #000000" href="">退出</a>
+                <a class="message-color" style="color: #000000" href="/FirstTiles/v1/user/loginOut">退出</a>
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
             <ul class="nav navbar-nav navbar-right text-center list-inline">
                 <li><a href="/FirstTiles">首页</a></li>
                 <li><a href="/FirstTiles/v1/profession">职业</a></li>
-                <li><a href="">推荐</a></li>
+                <li><a href="/FirstTiles/v1/u/excellentStudent">推荐</a></li>
                 <li><a href="">关于</a></li>
             </ul>
         </div>

@@ -1,4 +1,4 @@
-package com.draper.web.security.DES;
+package com.draper.service.security.DES;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;

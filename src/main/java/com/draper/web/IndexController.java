@@ -29,4 +29,9 @@ public class IndexController {
         return "indexView";
     }
 
+    @GetMapping("/u/studentList")
+    public String studentPage(){
+        return "excellentStudentListView";
+    }
+
 }

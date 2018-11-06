@@ -16,7 +16,7 @@
             </div>
             <div class="user-border col-lg-5 col-md-6">
 
-                <form class="login-form" name="login" action="/FirstTiles/v1/user" method="post">
+                <form class="login-form" name="login" action="/FirstTiles/v1/user/loginIn" method="post">
 
                     <i></i><input
                         class="form-control"

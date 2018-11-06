@@ -7,22 +7,26 @@
     <definition name="mainLayout" template="/WEB-INF/jsp/mainLayout.jsp">
         <put-attribute name="head" value="/WEB-INF/jsp/component/head.jsp"/>
         <put-attribute name="header" value="/WEB-INF/jsp/component/header.jsp"/>
-        <put-attribute name="body" value="/WEB-INF/jsp/indexBody.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/body/indexBody.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/jsp/component/footer.jsp"/>
         <put-attribute name="script" value="/WEB-INF/jsp/component/script.jsp"/>
     </definition>
 
     <!-- 实际布局 -->
     <definition name="indexView" extends="mainLayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/indexBody.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/body/indexBody.jsp"/>
     </definition>
 
     <definition name="professionView" extends="mainLayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/professionBody.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/body/professionBody.jsp"/>
     </definition>
 
     <definition name="loginView" extends="mainLayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/loginBody.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/body/loginInBody.jsp"/>
+    </definition>
+
+    <definition name="excellentStudentListView" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/body/uStudentListBody.jsp"/>
     </definition>
 
 </tiles-definitions>
