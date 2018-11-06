@@ -332,10 +332,18 @@
         </dependency>
 
         <!-- 7. security -->
+        <!-- 1) DES + AES -->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.60</version>
+        </dependency>
+
+        <!-- 2) JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.10.5</version>
         </dependency>
 
 
