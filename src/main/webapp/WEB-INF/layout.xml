@@ -26,7 +26,11 @@
     </definition>
 
     <definition name="excellentStudentListView" extends="mainLayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/body/uStudentListBody.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/body/excellentStudentListBody.jsp"/>
+    </definition>
+
+    <definition name="testView" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/body/testBody.jsp"/>
     </definition>
 
 </tiles-definitions>
