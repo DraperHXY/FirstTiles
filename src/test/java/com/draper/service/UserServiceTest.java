@@ -4,7 +4,6 @@ import com.draper.BaseTest;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.junit.Assert.*;
 
 public class UserServiceTest extends BaseTest {
 
@@ -17,6 +16,7 @@ public class UserServiceTest extends BaseTest {
 
     @Test
     public void hasUser() {
+        System.out.println("user service = " +userService.toString());
         boolean result = userService.hasUser("ddd");
         System.out.println(result);
     }
