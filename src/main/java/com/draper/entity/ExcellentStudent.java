@@ -2,7 +2,9 @@ package com.draper.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class ExcellentStudent implements Comparable<ExcellentStudent> {
+import java.io.Serializable;
+
+public class ExcellentStudent implements Comparable<ExcellentStudent>, Serializable {
 
     private long id;
     private String img;

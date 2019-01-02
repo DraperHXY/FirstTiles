@@ -1,4 +1,4 @@
-package com.draper.web.util.mytag;
+package com.draper.util.mytag;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

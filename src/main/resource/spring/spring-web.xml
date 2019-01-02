@@ -18,7 +18,7 @@
         (1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
         (2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持
     -->
-    <mvc:annotation-driven conversion-service="conversionService" validator="validator">
+    <mvc:annotation-driven conversion-service="conversionService">
         <!--<mvc:message-converters>-->
         <!--<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">-->
         <!--<property name="objectMapper">-->
@@ -47,7 +47,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/v1/u/**"/>
-            <bean class="com.draper.web.interceptor.UserInterceptor"/>
+            <bean class="com.draper.util.interceptor.UserInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 
@@ -70,24 +70,24 @@
     <!-- 4.扫描web相关的bean -->
     <context:component-scan base-package="com.draper.web"/>
 
-    <!-- 5.校验器 -->
-    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
-        <property name="validationMessageSource" ref="messageSource"/>
-    </bean>
+    <!--&lt;!&ndash; 5.校验器 &ndash;&gt;-->
+    <!--<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+        <!--<property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>-->
+        <!--<property name="validationMessageSource" ref="messageSource"/>-->
+    <!--</bean>-->
 
-    <!-- 6.MessageSource 国际化 -->
-    <bean id="messageSource"
-          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basenames">
-            <list>
-                <value>classpath:message/msg</value>
-                <value>classpath:message/validation_msg</value>
-            </list>
-        </property>
-        <property name="fileEncodings" value="utf-8"/>
-        <property name="cacheSeconds" value="120"/>
-    </bean>
+    <!--&lt;!&ndash; 6.MessageSource 国际化 &ndash;&gt;-->
+    <!--<bean id="messageSource"-->
+          <!--class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
+        <!--<property name="basenames">-->
+            <!--<list>-->
+                <!--<value>classpath:message/msg</value>-->
+                <!--<value>classpath:message/validation_msg</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="fileEncodings" value="utf-8"/>-->
+        <!--<property name="cacheSeconds" value="120"/>-->
+    <!--</bean>-->
 
     <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
         <property name="order" value="1"/>

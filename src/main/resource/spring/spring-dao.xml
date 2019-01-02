@@ -8,7 +8,6 @@
 	http://www.springframework.org/schema/context/spring-context.xsd">
     <!-- 配置整合mybatis过程 -->
     <!-- 1.配置数据库相关参数properties的属性：${url} -->
-    <context:property-placeholder location="classpath*:jdbc.properties"/>
     <context:component-scan base-package="com.draper.dao"/>
 
     <!-- 2.数据库连接池 -->
@@ -65,6 +64,30 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描Dao接口包 -->
         <property name="basePackage" value="com.draper.dao"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:memcached.properties</value>
+                <value>classpath:jdbc.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--spring整合memched-->
+    <bean id="memcachedPool" class="com.danga.MemCached.SockIOPool" factory-method="getInstance"
+          init-method="initialize"   destroy-method="shutDown">
+        <property name="servers">
+            <list>
+                <value>${memcached.server}</value>
+            </list>
+        </property>
+
+        <property name="maxConn" value="${memcached.maxConn}"></property>
+        <property name="maintSleep" value="${memcached.maniSleep}"></property>
+        <property name="nagle" value="${memcached.nagle}"></property>
+        <property name="socketTO" value="${memcached.socketTO}"></property>
     </bean>
 
 </beans>

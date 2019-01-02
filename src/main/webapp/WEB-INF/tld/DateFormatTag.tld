@@ -10,7 +10,7 @@
 
     <tag>
         <name>longToDate</name><!-- 你定义的标签的名称 -->
-        <tag-class>com.draper.web.util.mytag.DateFormatTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
+        <tag-class>com.draper.util.mytag.DateFormatTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
         <body-content>scriptless</body-content><!-- 标签体内容的格式 -->
         <attribute>
             <name>pattern</name>

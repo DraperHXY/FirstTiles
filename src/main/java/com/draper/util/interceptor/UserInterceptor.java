@@ -1,4 +1,4 @@
-package com.draper.web.interceptor;
+package com.draper.util.interceptor;
 
 import com.draper.service.CookieService;
 import org.slf4j.Logger;

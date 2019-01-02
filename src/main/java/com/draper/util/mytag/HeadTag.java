@@ -1,12 +1,12 @@
-package com.draper.web.util.mytag;
+package com.draper.util.mytag;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
-public class BodyTag extends TagSupport {
-
+public class HeadTag extends TagSupport {
+    
     private PageContext pageContext;
 
     @Override
@@ -17,11 +17,11 @@ public class BodyTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
         try {
-            pageContext.getResponse().getWriter().write("这是我写的一大段信息：ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+            pageContext.getResponse().getWriter().write("<tiles:insertAttribute name=\"head\"/>");
         } catch (IOException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
-
         return super.doStartTag();
     }
 }

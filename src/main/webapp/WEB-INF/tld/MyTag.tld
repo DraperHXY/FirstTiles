@@ -10,19 +10,19 @@
 
     <tag>
         <name>head</name><!-- 你定义的标签的名称 -->
-        <tag-class>com.draper.web.util.mytag.HeadTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
+        <tag-class>com.draper.util.mytag.HeadTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
         <body-content>JSP</body-content><!-- 标签体内容的格式 -->
     </tag>
 
     <tag>
         <name>header</name><!-- 你定义的标签的名称 -->
-        <tag-class>com.draper.web.util.mytag.HeaderTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
+        <tag-class>com.draper.util.mytag.HeaderTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
         <body-content>JSP</body-content><!-- 标签体内容的格式 -->
     </tag>
 
     <tag>
         <name>body</name><!-- 你定义的标签的名称 -->
-        <tag-class>com.draper.web.util.mytag.BodyTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
+        <tag-class>com.draper.util.mytag.BodyTag</tag-class><!-- 对应的标签处理程序：包名+类名 -->
         <body-content>JSP</body-content><!-- 标签体内容的格式 -->
     </tag>
 </taglib>

@@ -1,4 +1,4 @@
-package com.draper.web.util.mytag;
+package com.draper.util.mytag;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;

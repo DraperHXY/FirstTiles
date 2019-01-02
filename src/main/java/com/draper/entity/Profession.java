@@ -2,7 +2,9 @@ package com.draper.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class Profession {
+import java.io.Serializable;
+
+public class Profession implements Serializable {
 
     private long id;
     private String img;
