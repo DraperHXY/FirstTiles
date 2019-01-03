@@ -1,4 +1,4 @@
-package com.draper.web;
+package com.draper.controller;
 
 import com.draper.entity.User;
 import com.draper.service.UserService;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller

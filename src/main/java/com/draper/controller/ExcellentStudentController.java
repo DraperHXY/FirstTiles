@@ -1,4 +1,4 @@
-package com.draper.web;
+package com.draper.controller;
 
 import com.draper.entity.ExcellentStudent;
 import com.draper.service.ExcellentStudentService;
@@ -13,24 +13,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/v1")
-public class IndexController {
+@RequestMapping("/v1/u/excellentStudent")
+public class ExcellentStudentController {
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private ExcellentStudentService excellentStudentService;
 
-    @GetMapping("/index")
-    public String indexPage(Model model) {
-        List<ExcellentStudent> excellentStudentList =
-                excellentStudentService.getAllExcellentStudentSortList();
-        model.addAttribute("excellentStudentList", excellentStudentList);
-        return "indexView";
-    }
-
-    @GetMapping("/u/studentList")
-    public String studentPage(){
+    @GetMapping("")
+    private String studentList(Model model){
+        List<ExcellentStudent> excellentStudentList = excellentStudentService.getAllExcellentStudentList();
+        model.addAttribute("studentList", excellentStudentList);
         return "excellentStudentListView";
     }
 

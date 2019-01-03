@@ -30,6 +30,8 @@
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
         <jackson.version>2.9.5</jackson.version>
         <pagehelper.version>5.1.7</pagehelper.version>
+        <redis.version>2.9.0</redis.version>
+        <spring.redis.version>1.8.4.RELEASE</spring.redis.version>
     </properties>
 
     <dependencies>
@@ -273,9 +275,9 @@
 
         <!-- 3) 校验-->
         <!--<dependency>-->
-            <!--<groupId>org.hibernate</groupId>-->
-            <!--<artifactId>hibernate-validator</artifactId>-->
-            <!--<version>5.1.1.Final</version>-->
+        <!--<groupId>org.hibernate</groupId>-->
+        <!--<artifactId>hibernate-validator</artifactId>-->
+        <!--<version>5.1.1.Final</version>-->
         <!--</dependency>-->
 
 
@@ -286,9 +288,9 @@
         </dependency>
 
         <!--<dependency>-->
-            <!--<groupId>javax.validation</groupId>-->
-            <!--<artifactId>validation-api</artifactId>-->
-            <!--<version>2.0.1.Final</version>-->
+        <!--<groupId>javax.validation</groupId>-->
+        <!--<artifactId>validation-api</artifactId>-->
+        <!--<version>2.0.1.Final</version>-->
         <!--</dependency>-->
 
         <!-- 4) 前端辅助框架 -->
@@ -365,27 +367,16 @@
             <version>1.6</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>javax.xml.bind</groupId>-->
-            <!--<artifactId>jaxb-api</artifactId>-->
-            <!--<version>2.2.8</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.sun.xml.bind</groupId>-->
-            <!--<artifactId>jaxb-impl</artifactId>-->
-            <!--<version>2.2.7</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.sun.xml.bind</groupId>-->
-            <!--<artifactId>jaxb-core</artifactId>-->
-            <!--<version>2.2.7</version>-->
-        <!--</dependency>-->
-
-        <!--<dependency>-->
-            <!--<groupId>javax.activation</groupId>-->
-            <!--<artifactId>activation</artifactId>-->
-            <!--<version>1.1.1</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${redis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>${spring.redis.version}</version>
+        </dependency>
 
     </dependencies>
 

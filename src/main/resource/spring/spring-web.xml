@@ -68,7 +68,7 @@
     </bean>
 
     <!-- 4.扫描web相关的bean -->
-    <context:component-scan base-package="com.draper.web"/>
+    <context:component-scan base-package="com.draper.controller"/>
 
     <!--&lt;!&ndash; 5.校验器 &ndash;&gt;-->
     <!--<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
