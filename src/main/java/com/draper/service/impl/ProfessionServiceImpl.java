@@ -1,6 +1,5 @@
 package com.draper.service.impl;
 
-import com.danga.MemCached.MemCachedClient;
 import com.draper.dao.ProfessionMapper;
 import com.draper.entity.Profession;
 import com.draper.service.ProfessionService;
