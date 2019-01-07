@@ -3,7 +3,7 @@ package com.draper.service.impl;
 import com.draper.dao.ProfessionMapper;
 import com.draper.entity.Profession;
 import com.draper.service.ProfessionService;
-import com.draper.util.RedisCacheManager;
+import com.draper.util.RedisClusterCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +20,17 @@ public class ProfessionServiceImpl implements ProfessionService {
     private ProfessionMapper professionMapper;
 
     @Autowired
-    private RedisCacheManager redisCacheManager;
+    private RedisClusterCache redisClusterCache;
 
     @Override
     public List<Profession> getFrontProfessionList() {
         long tag1 = System.currentTimeMillis();
-        List<Profession> professionList = (List<Profession>) redisCacheManager.get("前端开发方向");
+        List<Profession> professionList = (List<Profession>) redisClusterCache.get("前端开发方向");
 
         if (professionList == null) {
             LOGGER.warn("调用 {} 缓存失败", "前端开发方向");
             professionList = professionMapper.selectByDirection("前端开发方向");
-            redisCacheManager.set("前端开发方向", professionList);
+            redisClusterCache.put("前端开发方向", professionList);
             LOGGER.warn("更新 {} 缓存", "前端开发方向");
         } else {
             LOGGER.warn("调用 {} 缓存成功", "前端开发方向");

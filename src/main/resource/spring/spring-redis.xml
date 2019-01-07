@@ -11,7 +11,7 @@
     <context:component-scan base-package="com.draper.util"/>
 
 
-    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
 
         <!-- 最大空闲数 -->
         <property name="maxIdle" value="${redis.maxIdle}" />
@@ -30,19 +30,43 @@
 
     </bean>
 
+    <bean class="org.springframework.data.redis.connection.RedisClusterConfiguration" id="redisClusterConfiguration">
+        <property name="maxRedirects" value="3"/>
+        <property name="clusterNodes">
+            <set>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="127.0.0.1"/>
+                    <constructor-arg name="port" value="7000"/>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="127.0.0.1"/>
+                    <constructor-arg name="port" value="7001"/>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="127.0.0.1"/>
+                    <constructor-arg name="port" value="7002"/>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="127.0.0.1"/>
+                    <constructor-arg name="port" value="7003"/>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="127.0.0.1"/>
+                    <constructor-arg name="port" value="7004"/>
+                </bean>
+                <bean class="org.springframework.data.redis.connection.RedisNode">
+                    <constructor-arg name="host" value="127.0.0.1"/>
+                    <constructor-arg name="port" value="7005"/>
+                </bean>
+            </set>
+        </property>
+    </bean>
+
     <!-- Spring-redis连接池管理工厂 -->
     <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-
-        <!-- IP地址 -->
-        <property name="hostName" value="${redis.host}" />
-        <!-- 端口号 -->
-        <property name="port" value="${redis.port}" />
-        <!-- 超时时间 默认2000-->
+        <constructor-arg name="clusterConfig" ref="redisClusterConfiguration"/>
         <property name="timeout" value="${redis.timeout}" />
-        <!-- 连接池配置引用 -->
-        <property name="poolConfig" ref="poolConfig" />
-        <!-- usePool：是否使用连接池 -->
-        <property name="usePool" value="true"/>
+        <property name="poolConfig" ref="jedisPoolConfig" />
     </bean>
 
     <!-- redis template definition -->
