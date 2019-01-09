@@ -4,6 +4,7 @@ import com.draper.entity.User;
 import com.draper.service.UserService;
 import com.draper.service.security.MD5.MD5Util;
 import com.draper.service.CookieService;
+import com.draper.util.SMSManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,14 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/v1/user")
 public class UserController {
+
+    private Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private CookieService cookieService;
@@ -26,17 +31,37 @@ public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @PostMapping("/loginUp")
-    public String loginUpUser(@RequestParam("account") String account, @RequestParam("password") String password) {
-        User user = new User();
-        user.setAccount(account);
-        user.setPassword(MD5Util.md5Password(password));
+    public String loginUpUser(@RequestParam HashMap<String, String> requestParam) {
 
-        if (userService.hasUser(account)){
-            return "loginView";
-        } else {
-            userService.signUp(user);
-            return "loginView";
+        String name = requestParam.get("name");
+        String firstPassword = requestParam.get("firstPassword");
+        String secondPassword = requestParam.get("secondPassword");
+        String phone = requestParam.get("phone");
+        String verifyCode = requestParam.get("verifyCode");
+
+        if (!firstPassword.equals(secondPassword)){
+            LOGGER.warn("两次密码不相符");
+            return "";
         }
+
+
+
+//        User user = new User();
+//        user.setAccount(account);
+//        user.setPassword(MD5Util.md5Password(password));
+
+//        if (userService.hasUser(account)){
+//            return "loginView";
+//        } else {
+//            userService.signUp(user);
+//            return "loginView";
+//        }
+        return "loginView";
+    }
+
+    @GetMapping("/loginUp")
+    public String loginUpGet() {
+        return "loginUpView";
     }
 
     @GetMapping("/loginIn")
@@ -45,7 +70,7 @@ public class UserController {
     }
 
     @GetMapping("/loginOut")
-    public String loginOut(HttpServletResponse response){
+    public String loginOut(HttpServletResponse response) {
         Cookie cookie = cookieService.remove("account");
         response.addCookie(cookie);
         return "indexView";
@@ -67,6 +92,31 @@ public class UserController {
             }
         }
         return "indexView";
+    }
+
+    @Autowired
+    private SMSManager smsManager;
+
+    @PostMapping("/sendPhoneCode")
+    public void sendLoginUpCode(@RequestParam("phone")String phone) {
+
+        LOGGER.warn("收到手机号为 {}", phone);
+//        HashMap<String, Object> result = smsManager.sendTemplateSMS(phone, "1", new String[]{"1452", "15"});
+
+//        if ("000000".equals(result.get("statusCode"))) {
+//            LOGGER.warn("用户登录成功");
+//            //正常返回输出data包体信息（map）
+//            HashMap<String, Object> data = (HashMap<String, Object>) result.get("data");
+//            Set<String> keySet = data.keySet();
+//            for (String key : keySet) {
+//                Object object = data.get(key);
+//                System.out.println(key + " = " + object);
+//            }
+//        } else {
+//            //异常返回输出错误码和错误信息
+//            LOGGER.error("错误手机号={},错误码={},错误信息={}", phone, result.get("statusCode"), result.get("statusMsg"));
+//        }
+
     }
 
 

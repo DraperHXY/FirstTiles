@@ -27,6 +27,7 @@
                            minlength="6" maxlength="16">
 
                     <input type="submit" value="登录"/>
+                    <a href="/FirstTiles/v1/user/loginUp" style="color:#000000">注册</a>
                 </form>
             </div>
         </div>

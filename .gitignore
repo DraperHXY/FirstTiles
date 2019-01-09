@@ -74,6 +74,7 @@ fabric.properties
 hs_err_pid*
 
 src/main/resource/jdbc.properties
+src/main/resource/api.properties
 *.puml
 
 target/ArtistStudio/

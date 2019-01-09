@@ -9,6 +9,11 @@
     </properties>
     <root id="archive" name="FirstTiles.war">
       <element id="artifact" artifact-name="FirstTiles:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="CCP_REST_SMS_SDK_JAVA_v2.6.3r" />
+        </element>
+      </element>
     </root>
   </artifact>
 </component>

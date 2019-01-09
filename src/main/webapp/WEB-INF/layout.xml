@@ -33,4 +33,8 @@
         <put-attribute name="body" value="/WEB-INF/jsp/body/testBody.jsp"/>
     </definition>
 
+    <definition name="loginUpView" extends="mainLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/body/loginUpBody.jsp"/>
+    </definition>
+
 </tiles-definitions>
