@@ -19,21 +19,22 @@ public class UserMapperTest extends BaseTest {
         User user = new User();
         user.setCreateAt(System.currentTimeMillis());
         user.setUpdateAt(System.currentTimeMillis());
-        user.setAccount("admin");
-        user.setPassword("admin");
-        userMapper.insertUser(user);
+        user.setName("draper");
+        user.setEmail("draper_hxy@163.com");
+        user.setPassword("draper");
+        userMapper.insertPhoneUser(user);
     }
 
     @Test
     public void testSelectUser() {
-        User user = userMapper.selectUserByAccount("admin");
+        User user = userMapper.selectUserByPhone("admin");
         logger.warn("password = {}", user.getPassword());
     }
 
 
     @Test
     public void testSelectUserIdByAccount() {
-        long id = userMapper.selectUserIdByAccount("admin");
+        long id = userMapper.selectUserIdByPhone("admin");
         logger.warn("id = {}", id);
     }
 

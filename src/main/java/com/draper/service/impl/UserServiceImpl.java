@@ -15,14 +15,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public long signUp(User user) {
-        userMapper.insertUser(user);
-        return userMapper.selectUserIdByAccount(user.getAccount());
+        userMapper.insertPhoneUser(user);
+        return userMapper.selectUserIdByPhone(user.getPhone());
     }
 
     @Override
     public boolean hasUser(String account) {
         try {
-            userMapper.selectUserIdByAccount(account);
+            userMapper.selectUserIdByPhone(account);
             return true;
         } catch (BindingException e){
             return false;
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean check(User expectUser) {
-        User realUser = userMapper.selectUserByAccount(expectUser.getAccount());
+        User realUser = userMapper.selectUserByPhone(expectUser.getPhone());
         if (realUser.getPassword().equals(expectUser.getPassword())) {
             return true;
         }

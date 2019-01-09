@@ -25,10 +25,10 @@ public class CookieServiceImpl implements CookieService {
     public Cookie[] addUser(User user) {
         Cookie[] cookies = new Cookie[3];
         LOGGER.warn("添加 cookie");
-        LOGGER.warn("account = {}", user.getAccount());
+        LOGGER.warn("phone = {}", user.getPhone());
         LOGGER.warn("password = {}", user.getPassword());
 
-        Cookie accountCookie = new Cookie("account", user.getAccount());
+        Cookie accountCookie = new Cookie("phone", user.getPhone());
         Cookie passwordCookie = new Cookie("password", user.getPassword());
 
         String authorizationMessage = null;
@@ -48,13 +48,13 @@ public class CookieServiceImpl implements CookieService {
     @Override
     public boolean verifyUser(Cookie... cookies) {
         LOGGER.warn("验证 Cookie");
-        String account = null;
+        String phone = null;
         String password = null;
         String authorization = null;
 
         for (Cookie cookie : cookies) {
             if ("account".equals(cookie.getName())) {
-                account = cookie.getValue();
+                phone = cookie.getValue();
             } else if ("password".equals(cookie.getName())) {
                 password = cookie.getValue();
             } else if ("authorization".equals(cookie.getName())) {
@@ -62,15 +62,15 @@ public class CookieServiceImpl implements CookieService {
             }
         }
 
-        LOGGER.warn("account = " + account);
+        LOGGER.warn("account = " + phone);
         LOGGER.warn("password = " + password);
-        if (account == null || password == null || authorization == null) {
+        if (phone == null || password == null || authorization == null) {
             return false;
         } else {
 
             LOGGER.warn("userService = " + userService);
             User user = new User();
-            user.setAccount(account);
+            user.setPhone(phone);
             user.setPassword(password);
 
             byte[] encryptAuthorization = Base64.decodeBase64(authorization);

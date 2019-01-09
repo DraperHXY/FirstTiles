@@ -34,7 +34,7 @@
     </definition>
 
     <definition name="loginUpView" extends="mainLayout">
-        <put-attribute name="body" value="/WEB-INF/jsp/body/loginUpBody.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/body/loginUpPhoneBody.jsp"/>
     </definition>
 
 </tiles-definitions>

@@ -11,6 +11,12 @@ public class User {
     private long createAt;
     @JsonIgnore
     private long updateAt;
-    private String account;
+
+    private String name;
+
+    private String phone;
+
+    private String email;
+
     private String password;
 }

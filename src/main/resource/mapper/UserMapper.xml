@@ -5,23 +5,23 @@
 
 <mapper namespace="com.draper.dao.UserMapper">
 
-    <insert id="insertUser">
+    <insert id="insertPhoneUser">
         INSERT INTO user
-        (create_at,update_at,account,password)
+        (create_at,update_at,name,phone,password)
         VALUES
-        (#{createAt}, #{updateAt}, #{account}, #{password})
+        (#{createAt}, #{updateAt}, #{name}, #{phone}, #{password})
     </insert>
 
-    <select id="selectUserByAccount" resultType="com.draper.entity.User">
+    <select id="selectUserByPhone" resultType="com.draper.entity.User">
         SELECT *
         FROM user
-        WHERE account = #{account}
+        WHERE phone = #{phone}
     </select>
 
-    <select id="selectUserIdByAccount" resultType="java.lang.Long">
+    <select id="selectUserIdByPhone" resultType="java.lang.Long">
         SELECT id
         FROM user
-        WHERE account = #{account}
+        WHERE phone = #{phone}
     </select>
 
 </mapper>

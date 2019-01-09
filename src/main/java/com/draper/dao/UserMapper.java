@@ -4,10 +4,10 @@ import com.draper.entity.User;
 
 public interface UserMapper {
 
-    void insertUser(User user);
+    void insertPhoneUser(User user);
 
-    User selectUserByAccount(String account);
+    User selectUserByPhone(String phone);
 
-    long selectUserIdByAccount(String account);
+    long selectUserIdByPhone(String phone);
 
 }

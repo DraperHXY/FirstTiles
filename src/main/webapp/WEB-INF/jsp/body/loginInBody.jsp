@@ -20,8 +20,7 @@
 
                     <i></i><input
                         class="form-control"
-                        name="account" type="text" placeholder="请输入手机号"
-                        ng-pattern="/\d{11}/" maxlength="11" numberic-input="">
+                        name="phone" type="text" placeholder="请输入手机号" maxlength="11" numberic-input="">
                     <input class="form-control"
                            name="password" type="password" placeholder="请输入登录密码" required=""
                            minlength="6" maxlength="16">
