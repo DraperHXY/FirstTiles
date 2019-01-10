@@ -20,13 +20,14 @@
 
                     <i></i><input
                         class="form-control"
-                        name="phone" type="text" placeholder="请输入手机号" maxlength="11" numberic-input="">
+                        name="account" type="text" placeholder="手机号/邮箱">
                     <input class="form-control"
                            name="password" type="password" placeholder="请输入登录密码" required=""
                            minlength="6" maxlength="16">
 
                     <input type="submit" value="登录"/>
-                    <a href="/FirstTiles/v1/user/loginUp" style="color:#000000">注册</a>
+                    <a href="/FirstTiles/v1/user/loginUp/p" style="color:#000000">手机注册</a>
+                    <a href="/FirstTiles/v1/user/loginUp/e" style="color:#000000">邮箱注册</a>
                 </form>
             </div>
         </div>

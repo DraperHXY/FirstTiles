@@ -10,4 +10,7 @@ public interface UserMapper {
 
     long selectUserIdByPhone(String phone);
 
+    void insertEmailUser(User user);
+
+    long selectUserIdByEmail(String email);
 }

@@ -13,6 +13,18 @@
             <property name="accountToken" value="${ronglian.accountToken}"/>
             <property name="appId" value="${ronglian.appId}"/>
         </bean>
+
+        <bean class="com.sendcloud.sdk.core.SendCloud" id="sendCloud">
+            <property name="apiUser" value="${sendcloud.api_user}"/>
+            <property name="apiKey" value="${sendcloud.api_key}"/>
+        </bean>
+
+        <bean class="com.sendcloud.sdk.builder.SendCloudBuilder">
+            <property name="sendCloud" ref="sendCloud"/>
+        </bean>
+
+
     </beans>
+
 
 </beans>

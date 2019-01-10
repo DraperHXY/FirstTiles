@@ -14,9 +14,15 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public long signUp(User user) {
+    public long signUpByPhone(User user) {
         userMapper.insertPhoneUser(user);
         return userMapper.selectUserIdByPhone(user.getPhone());
+    }
+
+    @Override
+    public long signUpByEmail(User user) {
+        userMapper.insertEmailUser(user);
+        return userMapper.selectUserIdByEmail(user.getEmail());
     }
 
     @Override

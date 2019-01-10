@@ -4,6 +4,7 @@ import com.draper.entity.User;
 import com.draper.service.UserService;
 import com.draper.service.security.MD5.MD5Util;
 import com.draper.service.CookieService;
+import com.draper.util.EmailManager;
 import com.draper.util.RandomVerifyCode;
 import com.draper.util.RedisClusterCache;
 import com.draper.util.SMSManager;
@@ -35,8 +36,8 @@ public class UserController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @PostMapping("/loginUp")
-    public String loginUpUser(@RequestParam HashMap<String, String> requestParam) {
+    @PostMapping("/loginUp/p")
+    public String loginUpPhone(@RequestParam HashMap<String, String> requestParam) {
 
         String name = requestParam.get("name");
         String firstPassword = requestParam.get("firstPassword");
@@ -67,14 +68,55 @@ public class UserController {
         user.setPhone(phone);
 
         LOGGER.warn("phone = {}, 开始注册", phone);
-        userService.signUp(user);
+        userService.signUpByPhone(user);
 
         return "loginView";
     }
 
-    @GetMapping("/loginUp")
-    public String loginUpGet() {
-        return "loginUpView";
+    @PostMapping("/loginUp/e")
+    public String loginUpEmail(@RequestParam HashMap<String, String> requestParam) {
+        String name = requestParam.get("name");
+        String firstPassword = requestParam.get("firstPassword");
+        String secondPassword = requestParam.get("secondPassword");
+        String email = requestParam.get("email");
+        String verifyCode = requestParam.get("verifyCode");
+
+        LOGGER.warn("name = {}", name);
+        LOGGER.warn("firstPassword = {}", firstPassword);
+        LOGGER.warn("secondPassword = {}", secondPassword);
+        LOGGER.warn("email = {}", email);
+
+        String emailCode = String.valueOf(redisClusterCache.get("email" + email));
+
+        if (!firstPassword.equals(secondPassword)) {
+            LOGGER.warn("email = {}, 两次密码不相符", email);
+            return "";
+        }
+
+        if (!emailCode.equals(verifyCode)) {
+            LOGGER.warn("email = {}, 验证码错误", email);
+            return "";
+        }
+
+        User user = new User();
+        user.setName(name);
+        user.setPassword(MD5Util.md5Password(firstPassword));
+        user.setEmail(email);
+
+        userService.signUpByEmail(user);
+
+        return "loginView";
+
+    }
+
+    @GetMapping("/loginUp/p")
+    public String loginUpPhoneGet() {
+        return "loginUpPhoneView";
+    }
+
+    @GetMapping("/loginUp/e")
+    public String loginUpEmailGet() {
+        return "loginUpEmailView";
     }
 
     @GetMapping("/loginIn")
@@ -111,7 +153,7 @@ public class UserController {
     private SMSManager smsManager;
 
     @PostMapping("/sendPhoneCode")
-    public void sendLoginUpCode(@RequestParam("phone") String phone) {
+    public void sendLoginUpPhoneCode(@RequestParam("phone") String phone) {
 
         int code = RandomVerifyCode.getRandomCode();
 
@@ -122,7 +164,7 @@ public class UserController {
         HashMap<String, Object> result = smsManager.sendTemplateSMS(phone, "1", new String[]{String.valueOf(code), "15"});
 
         if ("000000".equals(result.get("statusCode"))) {
-            LOGGER.warn("用户登录成功");
+            LOGGER.warn("用户注册成功");
             //正常返回输出data包体信息（map）
             HashMap<String, Object> data = (HashMap<String, Object>) result.get("data");
             Set<String> keySet = data.keySet();
@@ -134,6 +176,23 @@ public class UserController {
             //异常返回输出错误码和错误信息
             LOGGER.error("错误手机号={},错误码={},错误信息={}", phone, result.get("statusCode"), result.get("statusMsg"));
         }
+
+    }
+
+    @Autowired
+    private EmailManager emailManager;
+
+    @PostMapping("/sendEmailCode")
+    public void sendLoginUpEmailCode(@RequestParam("email") String email) {
+
+        int code = RandomVerifyCode.getRandomCode();
+
+        LOGGER.warn("email = {}，验证码 = {}", email, code);
+
+        redisClusterCache.put("email" + email, code);
+
+        emailManager.sendVerifyCode(email, String.valueOf(code));
+
 
     }
 

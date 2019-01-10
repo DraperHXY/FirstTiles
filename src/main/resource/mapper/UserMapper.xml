@@ -24,4 +24,17 @@
         WHERE phone = #{phone}
     </select>
 
+    <insert id="insertEmailUser">
+        INSERT INTO user
+        (create_at,update_at,name,email,password)
+        VALUES
+        (#{createAt}, #{updateAt}, #{name}, #{email}, #{password})
+    </insert>
+
+    <select id="selectUserIdByEmail" resultType="java.lang.Long">
+        SELECT id
+        FROM user
+        WHERE email = #{email}
+    </select>
+
 </mapper>

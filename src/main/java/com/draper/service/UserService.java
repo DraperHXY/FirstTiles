@@ -4,7 +4,9 @@ import com.draper.entity.User;
 
 public interface UserService {
 
-    long signUp(User user);
+    long signUpByPhone(User user);
+
+    long signUpByEmail(User user);
 
     boolean hasUser(String account);
 
