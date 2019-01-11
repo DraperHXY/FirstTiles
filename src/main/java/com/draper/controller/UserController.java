@@ -133,6 +133,7 @@ public class UserController {
 
     @PostMapping("/loginIn")
     public String login(@RequestParam("phone") String phone, @RequestParam("password") String password, HttpServletResponse response) {
+        // FIXME: 2019-01-10 前端改成了 account 这里还需要分别针对手机或者邮箱登录用户的问题
         User user = new User();
         user.setPhone(phone);
         user.setPassword(password);
